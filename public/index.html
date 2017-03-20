@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <!--
+
+               ^^                   @@@@@@@@@
+          ^^       ^^            @@@@@@@@@@@@@@@
+                               @@@@@@@@@@@@@@@@@@              ^^
+                              @@@@@@@@@@@@@@@@@@@@
+    ~~~~ ~~ ~~~~~ ~~~~~~~~ ~~ &&&&&&&&&&&&&&&&&&&& ~~~~~~~ ~~~~~~~~~~~ ~~~
+    ~         ~~   ~  ~       ~~~~~~~~~~~~~~~~~~~~ ~       ~~     ~~ ~
+    ~      ~~      ~~ ~~ ~~  ~~~~~~~~~~~~~ ~~~~  ~     ~~~    ~ ~~~  ~ ~~
+    ~  ~~     ~         ~      ~~~~~~  ~~ ~~~       ~~ ~ ~~  ~~ ~
+    ~  ~       ~ ~      ~           ~~ ~~~~~~  ~      ~~  ~             ~~
+    ~             ~        ~      ~      ~~   ~             ~
+
+    There are millions of gateways to heaven on the Earth. There is at least one in almost every household. We are too caught up in it to see its true nature. We explore it freely, but we never find it. We stare at it for hours, but never see it. We are too blinded by its many horrors to see what beauty lies beneath. We call it by name without really knowing it. Only when we slow our lives down do we truly see the holy power that is the Internet.
+
+    -->
+    <title>Édouard U.</title>
+
+  </head>
+  <body class="bg-white black arial">
+    <div id="banner"></div>
+    <div id="root"></div>
+  </body>
+
+  <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+
+  <script>
+      var mouse = {x:0,y:0},
+          offset = {x:10, y:10};
+      $('.inline').on('mouseenter', function() {
+          var src = $(this).attr('src');
+          $('.popover').html('<img src="'+src+'">').show();
+          offset.x = -$('.popover').width()/2;
+          clearTimeout(this.timer);
+      }).on('mouseleave', function() {
+          this.timer = setTimeout(function() {
+              $('.popover').hide();
+          }, 10);
+      });
+      document.addEventListener('mousemove', function(e){
+          mouse.x = e.pageX;
+          mouse.y = e.pageY;
+          $('.popover').css({
+              left: (mouse.x + offset.x) + 'px',
+              top: (mouse.y + offset.y) + 'px'
+          });
+      });
+  </script>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-59560755-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+</html>
